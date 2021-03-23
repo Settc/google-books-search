@@ -4,6 +4,7 @@ const mongoose = require("mongoose")
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const Book = require("./models/Book")
 require("dotenv").config()
 app.use(logger("dev"))
 
@@ -22,7 +23,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => console.log(err))
 
 // Define API routes here
+app.get("/api/books", (req, res) => {
 
+})
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
